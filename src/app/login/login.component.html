@@ -1,0 +1,20 @@
+<div class="">
+    <h1>{{aim}}</h1>
+</div>
+<form>
+    <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
+    <h1 class="text-center text-white ">Login page</h1>
+    <div class=" text-center mt-2 p-2">
+        <input  name="acno" #acno type="text" [placeholder]="data" class=" form-control w-100 p-2" id="acid">
+    </div>
+
+    <div class="text-center mt-2 p-2">
+        <input name="psw" #psw  type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid" >
+    </div>
+
+    <div class=" text-center mt-2 p-2">
+        <button type="submit" (click)="login(acno,psw)" class="btn btn-success ">Login</button>
+        <p class="text-white mt-3">new user? <a style="text-decoration: none;">Register</a></p>
+    </div>
+    </div>
+</form>
