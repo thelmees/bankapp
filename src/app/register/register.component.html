@@ -1,0 +1,23 @@
+<form (ngSubmit)="register()">
+    <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
+    <h1 class="text-center text-white ">Register</h1>
+    
+    <div class=" text-center mt-2 p-2">
+        <input  name="uname" [(ngModel)]="uname"  type="text" placeholder="username" class=" form-control w-100 p-2" id="uid">
+    </div>
+
+    <div class=" text-center mt-2 p-2">
+        <input  name="acno" [(ngModel)]="acno"  type="text" placeholder="acnumber" class=" form-control w-100 p-2" id="acid">
+    </div>
+
+
+    <div class="text-center mt-2 p-2">
+        <input name="psw" [(ngModel)]="psw"   type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid" >
+    </div>
+
+    <div class=" text-center mt-2 p-2">
+        <button type="submit"  class="btn btn-success ">signup</button>
+    </div>
+    </div>
+</form>
+

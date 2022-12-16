@@ -16,3 +16,133 @@ html-view
       1.2.1 event binding                  (eventname)="method name()"
       1.2.2 event binding using $ event    (eventname)="methodname($event)"
       1.2.3 event binding using template rendering variable   #variable
+
+2. two way binding
+
+  2.1 ngmodel          [(ngmodel)]="value"
+                       FormsModule
+
+Redirection in angular 
+-----------------------
+
+navigateByUrl     - method used to redirection
+
+Router            - class
+
+AppRoutingModule  - module
+
+Dependency injection
+---------------------
+- to use a method of class in another class
+- in constructor
+- step            access pecifier - public/private
+                  variable
+                  class name
+                            private variable:classname
+
+Angular Services
+-----------------
+
+ng g s servicename
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ user Defined Event Creation In Angular
+ ----------------------------------------
+
+ EventEmitter(from angular core)    - class used to create events
+ emit()                                   -to start the event
+
+
+Data in Angular
+-----------------
+
+Data   - class
+
+-create an object of class Data to access Data and Time
+
+
+
+
+Angular pipe
+-------------
+
+to transform datas into another formate
+    eg- data pipe
+
+
+

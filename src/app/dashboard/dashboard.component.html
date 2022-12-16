@@ -1,0 +1,50 @@
+<form (ngSubmit)="deposit()">
+    <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
+    <h1 class="text-center text-white ">Deposit</h1>
+    
+    <div class=" text-center mt-2 p-2">
+        <input  name="acno" [(ngModel)]="acno"  type="text" placeholder="acnumber" class=" form-control w-100 p-2" id="acid2">
+    </div>
+
+
+    <div class="text-center mt-2 p-2">
+        <input name="psw" [(ngModel)]="psw"   type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid2" >
+    </div>
+
+
+    <div class=" text-center mt-2 p-2">
+        <input  name="amount" [(ngModel)]="amnt"  type="text" placeholder="amount" class=" form-control w-100 p-2" id="amid2">
+    </div>
+
+    <div class=" text-center mt-2 p-2">
+        <button type="submit"  class="btn btn-outline-info ">Deposite</button>
+    </div>
+    </div>
+</form>
+
+
+<form (ngSubmit)="withdraw()">
+    <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
+    <h1 class="text-center text-white ">Withdraw</h1>
+    
+    <div class=" text-center mt-2 p-2">
+        <input  name="acno1" [(ngModel)]="acno1"  type="text" placeholder="acnumber" class=" form-control w-100 p-2" id="acid1">
+    </div>
+
+
+    <div class="text-center mt-2 p-2">
+        <input name="psw1" [(ngModel)]="psw1"   type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid1" >
+    </div>
+
+
+    <div class=" text-center mt-2 p-2">
+        <input  name="amount1" [(ngModel)]="amnt1"  type="text" placeholder="amount" class=" form-control w-100 p-2" id="amid1">
+    </div>
+
+    <div class=" text-center mt-2 p-2">
+        <button type="submit"  class="btn btn-outline-info ">Withdraw</button>
+    </div>
+    </div>
+</form>
+
+
