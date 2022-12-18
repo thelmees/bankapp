@@ -46,16 +46,21 @@ Angular Services
 ng g s servicename
 
 
+Angular directives
+-------------------
+
+1- structural dierectives - to handle structure datas in view of a component
+
+        -ngFor -can directly apply in html to access elements from array
 
 
+Form Validation in Angular
+---------------------------
 
+we can create forms in two ways
 
-
-
-
-
-
-
+  1.Template Driven Form
+  2.Model Driven Form
 
 
 

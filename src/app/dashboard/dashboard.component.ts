@@ -16,7 +16,12 @@ export class DashboardComponent {
   psw1=''
   amnt1=''
 
-  constructor(private ds: DataService) { }
+  user=''
+
+  constructor(private ds: DataService) {
+    // access username
+    this.user=this.ds.currentuser
+   }
 
   deposit() {
 
