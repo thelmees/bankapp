@@ -1,10 +1,25 @@
-<h1 class="fw-normal ms-3 p-3">Welcome {{user}}</h1>
+<h1 class="fw-normal ms-2 p-3">Welcome {{user}}</h1>
 
 <div>
-<a style="background:rgba(118, 115, 115, 0.322); text-decoration: none; color: black; border-radius: 5px; " class="border p-3 ms-3"  href="" routerLink="/transaction">View Transaction History</a>
+<a style="background:rgba(118, 115, 115, 0.322); text-decoration: none; color: black; border-radius: 5px; " class="border p-3 ms-4"  href="" routerLink="/transaction">View Transaction History</a>
 </div>
 
-<form (ngSubmit)="deposit()" [formGroup]="depositForm">
+<h4 class="fw-normal mt-3 ms-2 p-3">Date And Time : {{dateandtime | date : 'short'}}</h4>
+
+
+<div class=" text-end  p-2">
+    <button (click)="logout()" class="btn btn-primary">Logout</button>
+</div>
+
+<div class=" text-end  p-2">
+    <button (click)="deleteconfirm()"  class="  btn btn-primary">Delete</button>
+</div>
+    
+
+<app-deleteconfirm [item]="acno"></app-deleteconfirm>
+
+
+<form [ngClass]="acno?'style':''" (ngSubmit)="deposit()" [formGroup]="depositForm">
     <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
     <h1 class="text-center text-white ">Deposit</h1>
     
@@ -36,7 +51,7 @@
 
 
 
-<form (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
+<form [ngClass]="acno?'style':''" (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
     <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
     <h1 class="text-center text-white ">Withdraw</h1>
     
@@ -67,3 +82,7 @@
 </form>
 
 
+
+
+
+    

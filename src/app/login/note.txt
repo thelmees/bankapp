@@ -46,7 +46,7 @@ Angular Services
 ng g s servicename
 
 
-Angular directives
+Angular directives  - ( To manage DOM in Angular)
 -------------------
 
 1- structural dierectives - to handle structure datas in view of a component
@@ -54,6 +54,11 @@ Angular directives
         -ngFor -can directly apply in html to access elements from array
 
         -ngIf
+
+2.Component dierective
+
+3.Atribute dierective   - To add class Atribute
+
 
 Form Validation in Angular
 ---------------------------
@@ -100,14 +105,20 @@ we can create forms in two ways
   - delete    localStorage.removeItem()
 
 
-          
+  Parent Child components communication in Angular
+---------------------------------------------------
 
 
 
 
 
 
+Date in Angular
+----------------
 
+Date    - class
+
+-create an object of class Data to access Date and Time
 
 
 

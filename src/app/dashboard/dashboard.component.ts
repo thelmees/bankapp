@@ -1,5 +1,7 @@
 import { Component, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DeleteconfirmComponent } from '../deleteconfirm/deleteconfirm.component';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -17,10 +19,16 @@ export class DashboardComponent {
   // psw1=''
   // amnt1=''
 
+  dateandtime:any
+
+  acno:any
+
   user=''
 
-  constructor(private ds: DataService,private fb:FormBuilder) {
+  constructor(private ds: DataService,private fb:FormBuilder, private router:Router) {
   
+    this.dateandtime= new Date()
+
     // access username
     this.user=this.ds.currentuser
    }
@@ -35,6 +43,13 @@ export class DashboardComponent {
       psw1:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]],
       amnt1:['',[Validators.required,Validators.pattern('[0-9]+')]]
     })
+
+   ngOnInit(): void{
+      if(!localStorage.getItem('currentacno')){
+        alert('please login first')
+        this.router.navigateByUrl('')
+      }
+   } 
 
 
   deposit() {
@@ -91,8 +106,15 @@ export class DashboardComponent {
     }
   
     }
+  logout(){
+    localStorage.removeItem('currentuser')
+    localStorage.removeItem('currentacno')
+    this.router.navigateByUrl('')
+  }
     
-
+  deleteconfirm(){
+    this.acno=JSON.parse(localStorage.getItem('currentacno') || "")
+  }
 }
 
 

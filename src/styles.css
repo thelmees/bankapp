@@ -3,3 +3,7 @@ body{
     background-image: url("./assets/10410212_17979.jpg");
     background-size: cover;
 }
+
+.style{
+    opacity: 0;
+}
