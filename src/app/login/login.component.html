@@ -1,16 +1,22 @@
 <div class="">
     <h1 class="fw-normal">{{aim}}</h1>
 </div>
-<form (ngSubmit)="login()">
+<form (ngSubmit)="login()" [formGroup]="loginForm">
     <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
     <h1 class="text-center text-white ">Login page</h1>
+
     <div class=" text-center mt-2 p-2">
-        <input  name="acno" [(ngModel)]="acno" type="text" [placeholder]="data" class=" form-control w-100 p-2" id="acid">
+        <input  name="acno" formControlName="acno"  type="text" [placeholder]="data" class=" form-control w-100 p-2" id="acid">
     </div>
+    <p *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" class="text-danger">invalid acno</p>
+
+
 
     <div class="text-center mt-2 p-2">
-        <input name="psw" [(ngModel)]="psw"  type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid" >
+        <input name="psw" formControlName="psw"  type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid">
     </div>
+    <p *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched" class="text-danger">invalid password</p>
+
 
     <div class=" text-center mt-2 p-2">
         <button type="submit"  class="btn btn-success ">Login</button>

@@ -1,22 +1,28 @@
-<form (ngSubmit)="register()">
+<form (ngSubmit)="register()" [formGroup]="registerForm">
     <div class="container w-25 border mt-5 p-3 form-control" style="background-color: rgba(118, 115, 115, 0.322);">
     <h1 class="text-center text-white ">Register</h1>
     
     <div class=" text-center mt-2 p-2">
-        <input  name="uname" [(ngModel)]="uname"  type="text" placeholder="username" class=" form-control w-100 p-2" id="uid">
+        <input  name="uname" formControlName="uname"  type="text" placeholder="username" class=" form-control w-100 p-2" id="uid">
     </div>
+    <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
+        <p class="text-danger">invalid username</p>
+    </div>
+
 
     <div class=" text-center mt-2 p-2">
-        <input  name="acno" [(ngModel)]="acno"  type="text" placeholder="acnumber" class=" form-control w-100 p-2" id="acid">
+        <input  name="acno" formControlName="acno"  type="text" placeholder="acnumber" class=" form-control w-100 p-2" id="acid">
     </div>
-
+    <p *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched" class="text-danger">invalid acno</p>
 
     <div class="text-center mt-2 p-2">
-        <input name="psw" [(ngModel)]="psw"   type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid" >
+        <input name="psw" formControlName="psw"   type="password" placeholder="password"  class=" form-control w-100 p-2" id="pid" >
     </div>
+    <p *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched" class="text-danger">invalid password</p>
+
 
     <div class=" text-center mt-2 p-2">
-        <button type="submit"  class="btn btn-success ">signup</button>
+        <button type="submit"  class="btn btn-outline-info ">Sign up</button>
     </div>
     </div>
 </form>

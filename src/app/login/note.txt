@@ -53,31 +53,54 @@ Angular directives
 
         -ngFor -can directly apply in html to access elements from array
 
+        -ngIf
 
 Form Validation in Angular
 ---------------------------
 
 we can create forms in two ways
 
-  1.Template Driven Form
-  2.Model Driven Form
+   1.Template Driven Form
+
+   2.Model Driven Form
+
+       -Reactive Form 
+       ----------------
+
+           ReactiveFormsModule - module used to create model forms
+
+           FormBuilder         -class of ReactiveFormsModule
+
+                   -group,array,control
+
+     validate Model Form
+     --------------------
+
+     validator - a class in angular it includes methods for apply Validation
+
+     -aceess errors in validor rule
+
+            this.registerForm.get('uname')?.errors
+
+                              -valid    -empty resonse
+                              
+                              -invalid  - content
 
 
+                  if(this.registerForm.get('uname')?.error){       //*ngIf
 
 
+                  }
+
+ Local Storage in Angular
+ -------------------------
+
+  - store     localStorage.setItem()
+  - access    localStorage.getItem()
+  - delete    localStorage.removeItem()
 
 
-
-
-
-
-
-
-
-
-
-
-
+          
 
 
 
@@ -150,4 +173,41 @@ to transform datas into another formate
     eg- data pipe
 
 
+CLIENT SERVER INTEGRATION
+--------------------------
+--------------------------
 
+
+http request Creation
+----------------------
+
+HttpClientModule   -Module
+HttpClient         -class
+
+
+Asynchronous reqquest in TS
+----------------------------
+
+js - promise       --resolve  then()
+                   --reject   catch()
+
+ts-  observable    --resolve  subscribe()
+                   --reject   catch()
+
+  Rxjs  -    library to solve asynchrounous code in ts
+
+   (reactive Extension for js)
+
+
+   appent token in headers of http
+   -------------------------------
+
+   create headers
+
+      HttpHeaders  - class to create header object
+
+          let headers=new HttpHeaders()
+
+append token in header object
+  
+  header.appent('access-token', token)

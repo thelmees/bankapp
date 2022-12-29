@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -9,18 +10,46 @@ import { DataService } from '../services/data.service';
 })
 export class RegisterComponent {
 
-  uname=''
-  acno=''
-  psw=''
+  // uname=''
+  // acno=''
+  // psw=''
 
-  constructor(private ds:DataService,private router:Router) { }
+  constructor(private ds: DataService, private router: Router, private fb: FormBuilder) { }
 
-  register(){
+  registerForm = this.fb.group({
+    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]]
+  })
 
-    var uname=this.uname
-    var acno=this.acno
-    var psw=this.psw
-   
+  register() {
+
+    var uname = this.registerForm.value.uname
+    var acno = this.registerForm.value.acno
+    var psw = this.registerForm.value.psw
+
+    if (this.registerForm.valid) {
+
+    //   const result = this.ds.register(acno, uname, psw)
+
+    //   this.ds.register(acno, uname, psw).subscribe(
+    //     (result: any) => {
+    //       alert(result.message)
+    //       this.router.navigateByUrl('')
+    //     },
+    //     result => {
+    //       alert(result.error.message)
+    //       this.router.navigateByUrl('')
+    //     }
+    //   )
+
+    // }
+    // else {
+    //   alert("invalid form")
+
+    // }
+  // }
+
     const result=this.ds.register(acno,uname,psw)
 
     if(result){
@@ -32,5 +61,12 @@ export class RegisterComponent {
       this.router.navigateByUrl('')
     }
   }
+  else{
+    alert("invalid form")
+  }
+
+
 
 }
+}
+
